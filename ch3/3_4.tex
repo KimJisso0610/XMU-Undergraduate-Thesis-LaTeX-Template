@@ -1,0 +1,10 @@
+\section{统一平均变化强度 (UACI)}
+
+UACI 使用以下表达式确定两个加密图像 ($C_1$和$C_2$) 内差异的平均强度，用于评估加密方法的强度，
+它的值基于图像的格式和大小。 
+通过 UACI，可以评估加密图像和原始图像之间的平均强度变化。 
+最大的 UACI 表明所建议的技术对各种攻击具有抵抗力。 
+UACI 的确定如下（假设灰度图像的大小为$M\times N$）\citep{ying2004digital}：
+\begin{equation}
+    \text{UACI}=\frac{1}{N\times M}\left[\sum_{i}\sum_{j}\frac{C_1(i,j)-C_2(i,j)}{\max(C_2)}\right]\times 100
+\end{equation}

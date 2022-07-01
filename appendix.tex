@@ -1,0 +1,35 @@
+\documentclass[UTF8]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{titletoc}
+\usepackage{fontspec}
+\usepackage{subfiles}
+\usepackage{listings}
+
+
+
+\usepackage[fontset=none,heading=true]{ctex}
+\setCJKmainfont{宋体}[BoldFont=黑体]
+\setmainfont{Times New Roman}
+
+\renewcommand{\title}{模板示例：基于混沌学理论的数字图像加密技术}
+\input{config/setting.tex}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    numbers=left}
+
+\begin{document}
+    \backmatter
+
+    \setcounter{page}{17}
+    \input{config/frontmatter_config.tex}
+    \let\cleardoublepage\clearpage
+    \input{backmatter/appendix_a.tex}
+    \input{backmatter/appendix_b.tex}
+
+\end{document}

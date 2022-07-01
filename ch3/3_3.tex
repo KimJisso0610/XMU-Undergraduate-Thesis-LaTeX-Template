@@ -1,0 +1,12 @@
+\section{像素数变化率 (NPCR)}
+
+扩散以判断加密算法随机化的最基本参数的个数来表示。 
+NPCRs 用于检查图像加密算法的安全性。
+考虑$C_1$和$C_2$作为两个具有大小的图像，我们定义了一个与图像大小相似的数组：
+\begin{equation}
+    D(i,j)= \genfrac{\{}{}{0pt}{}{0,\, \text{if}\, C_1(i,j)=C_2(i,j)}{1,\, \text{if}\, C_1(i,j)\neq C_2(i,j)}
+\end{equation}
+NPCR 确定两个不同图像中像素的百分比，其计算公式如下\citep{wang2020image, wang2016novel, yun2009digital}：
+\begin{equation}
+    \text{NCPR}=\frac{\sum_{i}^{} \sum_{j}^{} D(i,j) }{N\times M}\times 100\%
+\end{equation}

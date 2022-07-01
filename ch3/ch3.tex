@@ -1,0 +1,32 @@
+\chapter{算法}
+
+本节可按小标题划分。
+它应该对实验结果、它们的解释以及可以得出的实验结论提供简明准确的描述。
+实施建议算法的步骤是：\\ \par
+
+\noindent
+\hangafter=1
+\setlength{\hangindent}{4em}
+步骤1：排列一张灰度图。图像的大小设置为$m\times n$。 
+此外，放置了数据矩阵$R$。 通过评估两个逻辑图，生成一个混沌序列。 与主图像进行 XNOR，扩散终止。
+
+\noindent
+\hangafter=1
+\setlength{\hangindent}{4em}
+步骤2：本步骤中，对步骤1中的漫反射图像进行小波分解，提取小波系数，记为ca1。
+
+\noindent
+\hangafter=1
+\setlength{\hangindent}{4em}
+步骤3：利用二维超混沌图CML产生混沌序列，并利用步骤2中建立的ca1进行位置混淆。
+
+\noindent
+\hangafter=1
+\setlength{\hangindent}{4em}
+步骤4：在最后一步，可以通过小波重建混淆图像，得到了加密的图像。加密的逆运算称为解密算法。 图像加密和图像解密中的系统参数和混沌序列的初值是一致的。
+
+\input{ch3/3_1.tex}
+\input{ch3/3_2.tex}
+\input{ch3/3_3.tex}
+\input{ch3/3_4.tex}
+\input{ch3/3_5.tex}

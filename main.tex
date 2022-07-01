@@ -1,0 +1,60 @@
+\documentclass[UTF8]{book}
+
+\renewcommand{\title}{模板示例：基于混沌学理论的数字图像加密技术}
+
+\usepackage[fontset=none,heading=true]{ctex}
+\setCJKmainfont{宋体}[AutoFakeBold={2.5}]
+\setCJKsansfont{黑体}[AutoFakeBold={2.5}]
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\input{config/setting.tex}
+
+\usepackage{titlesec}
+\usepackage{setspace}
+
+
+\begin{document}
+
+    \frontmatter
+    \input{config/mainmatter_config.tex}
+    \input{frontmatter/cover.tex}
+    \includepdf[pages=1]{frontmatter/blank.pdf}
+    \pagenumbering{Roman}
+    \input{frontmatter/promise.tex}
+    \setcounter{page}{2}
+    \addcontentsline{toc}{chapter}{致谢}
+    \includepdf[pages=1]{thanks_abstract.pdf}
+    \setcounter{page}{3}
+    \addcontentsline{toc}{chapter}{摘要}
+    \includepdf[pages=2]{thanks_abstract.pdf}
+    \setcounter{page}{4}
+    \addcontentsline{toc}{chapter}{Abstract}
+    \includepdf[pages=3]{thanks_abstract.pdf}
+    \setcounter{page}{5}
+    \addcontentsline{toc}{chapter}{目录}
+    \input{frontmatter/content_zh_cn.tex}
+    \setcounter{page}{6}
+    \addcontentsline{toc}{chapter}{Table of Contents}
+    \includepdf[pages=6]{content_en.pdf}
+    
+
+    \input{config/mainmatter_config.tex}    
+    \mainmatter
+    \input{ch1/ch1.tex}
+    \input{ch2/ch2.tex}
+    \input{ch3/ch3.tex}
+    \input{ch4/ch4.tex}
+    \input{ch5/ch5.tex}
+    %\backmatter
+    
+    \begin{center}
+        \bibliography{backmatter/reference}
+        \addcontentsline{toc}{chapter}{参考文献}
+    \end{center}
+    \includepdf[pages=1]{frontmatter/blank.pdf} % 参考文献是奇数页的话请使用！
+    \addcontentsline{toc}{chapter}{附录\space A\quad 关于本论文模板的相关说明}
+    \includepdf[pages=1]{appendix.pdf}
+    \addcontentsline{toc}{chapter}{附录\space B\quad 附录代码示例}
+    \includepdf[pages=2-5]{appendix.pdf}
+    
+\end{document}

@@ -1,0 +1,70 @@
+\chapter{实验和数值结果}
+
+在本章中，我将使用 Y. Pourasad 等人的实验结果所提出的算法步骤的结果，如图 1 所示。
+在第一步中，导入大小为$m\times n$的输入灰度图像。
+基于图\ref{fig:4.1}\footnote{（顺带当作是脚注示例）注意给图片标签命名时不要像我这样使用4.1，
+不然如果你要在前面加图片会导致很混乱，最好起别的名字}，使用使用的两个逻辑图创建了一个混沌序列。
+最后，在扩散步骤中，生成用于加密的安全密钥。
+对于输入图像的加密，必须在小波分解子带之间插入安全密钥。 
+DWT方法的子带如图\ref{fig:4.1}所示。DWT子带中从上到下和从左到右的图像是Low-Low、Low-High、High-Low和High-High子带。
+利用二维超混沌映射 CML，产生混沌序列并进行混淆。
+在最后一步，生成混淆图像。最后，图像由使用输入图像和安全密钥的加密矩阵组成。
+用数值结果评估建议的算法表明该算法是稳健的。所提出算法的数值结果如表\ref{table:4.1}\footnote{
+    注意给表格标签命名时不要像我这样使用4.1，
+不然如果你要在前面加表格会导致很混乱，最好起别的名字（同样顺带当作是脚注示例）}所示。\\
+
+\begin{figure}[ht]
+    \begin{center}
+        \includegraphics[width=\textwidth]{figure/p1.png}\\
+        \includegraphics[width=\textwidth]{figure/p2.png}\\
+        \includegraphics[width=\textwidth]{figure/p3.png}\\
+    \end{center}
+    \caption{所提出方法的处理结果 \label{fig:4.1}}
+\end{figure}
+
+\begin{table}[ht]
+    \wuhao
+    \caption{所提出的算法的数值结果 \label{table:4.1}}
+    \begin{tabularx}{\textwidth}{YYYYYY}
+        \Xhline{1.5pt}
+        \bfseries Image & \bfseries Type & \bfseries PSNR & \bfseries NPCR & \bfseries UACI & \bfseries NC \\
+        \Xhline{0.75pt}
+        Lena & JPG & 42.612& 99.757 & 33.120 & 0.9548 \\
+        Peppers & JPG & 39.220 & 99.787 & 33.621 & 0.9934 \\
+        Barbara & JPG & 36.841 & 99.626 & 33.126 & 0.9809 \\
+        Baloon & JPG & 39.134 & 99.881 & 33.415 & 0.9137 \\
+        Boat & JPG & 39.223 & 99.625 & 33.671 & 0.9001 \\
+        \Xhline{1.5pt}
+    \end{tabularx}
+\end{table}
+
+首先，对原始图像（原始图像）进行扩散操作，主键值取自表\ref{table:4.2}。
+ 然后，在从表\ref{table:4.2}中获取主键值的同时执行混淆操作。 
+ 加密的结果与噪声相同（图\ref{fig:4.2}）。 从加密图像中没有获取关于原始图像的信息。 
+ 通过对加密图像进行解密的密钥获取解密图像，然后进行扩散和混淆操作（图\ref{fig:4.2}(b)）。\\
+
+ \begin{table}[ht]
+    \wuhao
+    \caption{扩散和混淆操作的关键初始值 \label{table:4.2}}
+    \begin{tabularx}{\textwidth}{YYYY}
+        \Xhline{1.5pt}
+        \bfseries Key (Diffusion) & \bfseries Value (Diffusion) & \bfseries Key (Confusion) & \bfseries Value (Confusion)\\
+        \Xhline{0.75pt}
+        $x_1(1)$ & 0.5 & $x_3(1)$ & 0.3 \\
+        $x_2(1)$ & 0.5 & $y_3(1)$ & 0.3 \\
+        $\mu_1$ & 4.0 & $\mu_1$ & 4.0 \\
+        $\mu_2$ & 3.9 & $\mu_2$ & 3.9 \\
+        \Xhline{1.5pt}
+    \end{tabularx}
+\end{table}
+
+\begin{figure}[ht]
+    \begin{center}
+        \includegraphics[width=\textwidth]{figure/p4.png}\\
+    \end{center}
+    \caption{将所提出的算法应用于某些图像的视觉结果\\ 
+    (a) 原始图像； (b) 加密图像； (c) 重建图像 \label{fig:4.2}}
+\end{figure}
+
+\input{ch4/4_1.tex}
+\input{ch4/4_2.tex}

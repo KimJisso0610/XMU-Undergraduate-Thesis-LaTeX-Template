@@ -1,0 +1,108 @@
+\documentclass[UTF8]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{titletoc}
+\usepackage{fontspec}
+\usepackage{subfiles}
+\usepackage{listings}
+
+
+
+\usepackage[fontset=none,heading=true]{ctex}
+\setCJKmainfont{宋体}[BoldFont=黑体]
+\setmainfont{Times New Roman}
+
+\renewcommand{\title}{模板示例：基于混沌学理论的数字图像加密技术}
+\input{config/setting.tex}
+
+\usepackage{tocloft}      %必须这么写，否则会报错
+
+\renewcommand\contentsname{Table of Contents}
+\renewcommand\cftbeforetoctitleskip{-7.5pt}
+\renewcommand\cftaftertoctitleskip{15pt}
+\renewcommand\cfttoctitlefont{\bfseries\rmfamily\xiaosan}
+\renewcommand\cftdot{…}
+\renewcommand{\cftdotsep}{0}
+
+\renewcommand{\cftchapleader}{\cftdotfill{-0.5}} %设置chapter条目的引导点间距
+\renewcommand{\cftsecleader}{\cftdotfill{-0.5}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{-0.5}}
+\renewcommand{\cftchapfont}{\rmfamily\bfseries\sihao}    %设置chapter条目的字体
+\renewcommand{\cftchappagefont}{\rmfamily\sihao}
+\renewcommand{\cftbeforechapskip}{7pt}   
+\renewcommand{\cftsecfont}{\rmfamily\bfseries\xiaosi}    %设置section条目的字体
+\renewcommand{\cftsecpagefont}{\rmfamily\xiaosi}
+\renewcommand{\cftbeforesecskip}{6pt}
+\renewcommand{\cftsubsecfont}{\rmfamily\xiaosi} %设置subsection条目的字体
+\renewcommand{\cftsubsecpagefont}{\rmfamily\xiaosi}
+\renewcommand{\cftbeforesubsecskip}{6pt}
+
+\begin{document}
+    \frontmatter
+    \pagenumbering{Roman}
+    \setcounter{page}{2}
+    \addcontentsline{toc}{chapter}{Thanks}
+    \includepdf[pages=1]{frontmatter/blank.pdf}
+    \addcontentsline{toc}{chapter}{Abstract (Chinese)}
+    \includepdf[pages=1]{frontmatter/blank.pdf}
+    \addcontentsline{toc}{chapter}{Abstract (English)}
+    \includepdf[pages=1]{frontmatter/blank.pdf}
+    \addcontentsline{toc}{chapter}{Table of Contents (Chinese)}
+    \includepdf[pages=1]{frontmatter/blank.pdf}
+    \addcontentsline{toc}{chapter}{Table of Contents (English)}
+    \includepdf[pages=1]{frontmatter/blank.pdf}
+    \setcounter{page}{6}
+    \begin{center}\tableofcontents\end{center}
+    \mainmatter
+    %page1
+    
+    \ctexset{
+        chapter = {
+            format={\sffamily\xiaosan},
+            beforeskip={-22.5pt},afterskip={15pt},
+            name={,}, number={\arabic {chapter}}
+        },
+        section = {
+            format={\sffamily \sihao},
+            %beforeskip={-7pt},afterskip={-7pt},
+        },
+        subsection = {
+            format={\rmfamily\xiaosi},
+            %beforeskip={0pt},afterskip={0pt},
+        }
+}
+
+    \chapter{Introduction}
+    \includepdf[pages=1]{frontmatter/blank.pdf}
+    \chapter{Materials and Methods}
+    \section{Introduction to Chaos Theories}
+    \section{Chaotic Sequence Based on Logistic Map}
+    \section{Wavelet Transform}
+    \chapter{Algorithm}
+    \section{Encryption Assessments Metrics}
+    \section{Peak Signal to Noise Ratio (PSNR)}
+    \section{Number of Pixels Change Rate (NPCR)}
+    \newpage
+    \section{Unified Average Changing Intensity (UACI)}
+    \section{Digital Image Correlation (DIC)}
+    \chapter{Experimental and Numerical Results}
+    \section{Histogram Analysis}
+    \newpage
+    \section{Robustness}
+    \includepdf[pages=1]{frontmatter/blank.pdf}
+    \setcounter{page}{13}
+    \chapter{Conclusions}
+    \includepdf[pages=1]{frontmatter/blank.pdf}
+    \addcontentsline{toc}{chapter}{References}
+    \includepdf[pages=1]{frontmatter/blank.pdf}
+    \includepdf[pages=1]{frontmatter/blank.pdf}
+    \addcontentsline{toc}{chapter}{Appendix A\quad Instructions for this thesis template}
+    \includepdf[pages=1]{frontmatter/blank.pdf}
+    \addcontentsline{toc}{chapter}{Appendix B\quad Appendix Code Example}
+    \includepdf[pages=1]{frontmatter/blank.pdf}
+
+\end{document}

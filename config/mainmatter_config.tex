@@ -1,0 +1,37 @@
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+\ctexset{
+        chapter = {
+            format={\sffamily\xiaosan},
+            beforeskip={-20pt},afterskip={15pt},
+            name={,}, number={\arabic {chapter}}
+        },
+        section = {
+            format={\sffamily \sihao},
+            %beforeskip={-7pt},afterskip={-7pt},
+        },
+        subsection = {
+            format={\rmfamily\xiaosi},
+            %beforeskip={0pt},afterskip={0pt},
+        }
+}
+
+%\titlespacing{\chapter}{0pt}{7.5pt}{7.5pt}
+\titlespacing{\section}{0pt}{19pt}{7pt}
+\titlespacing{\subsection}{0pt}{3pt}{3pt}
+
+\makeatletter
+% cancel the superscript style of counter used in footnote text
+\xpatchcmd\@makefntext
+  {{\hss\@makefnmark}}
+  {{\hss\@makefnmark@nosuperscript}\space}
+  {}{}
+
+% old: superscript style
+% \def\@makefnmark{\hbox{\@textsuperscript{\normalfont\@thefnmark}}}
+
+% new: normal style, lower baseline
+\def\@makefnmark@nosuperscript{\hbox{\normalfont\@thefnmark}}
+\makeatother

@@ -1,0 +1,102 @@
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{titletoc}
+\usepackage{fontspec}
+\usepackage{subfiles}
+\usepackage{txfonts}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{caption}
+\usepackage{tabularx}
+\usepackage{hyperref}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\newcommand{\xiaochu}{\fontsize{30pt}{40pt}\selectfont}    % 小初, 1.5倍行距
+\newcommand{\yihao}{\fontsize{26pt}{36pt}\selectfont}    % 一号, 1.4倍行距
+\newcommand{\erhao}{\fontsize{22pt}{44pt}\selectfont}    % 二号, 1.5倍行距
+\newcommand{\xiaoer}{\fontsize{18pt}{27pt}\selectfont}    % 小二, 1.5倍行距
+\newcommand{\sanhao}{\fontsize{16pt}{24pt}\selectfont}    % 三号, 1.5倍行距
+\newcommand{\xiaosan}{\fontsize{15pt}{22pt}\selectfont}    % 小三, 1.5倍行距
+\newcommand{\sihao}{\fontsize{14pt}{21pt}\selectfont}    % 四号, 1.5倍行距
+\newcommand{\banxiaosi}{\fontsize{13pt}{19.5pt}\selectfont}    % 半小四, 1.5倍行距
+\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}    % 小四, 1.5倍行距
+\newcommand{\dawuhao}{\fontsize{11pt}{11pt}\selectfont}    % 大五号, 单倍行距
+\newcommand{\wuhao}{\fontsize{10.5pt}{15.75pt}\selectfont}    % 五号, 单倍行距
+\newcommand{\xiaowu}{\fontsize{9pt}{9pt}\selectfont}    % 小五号, 单倍行距
+
+\usepackage{graphicx}
+\usepackage[a4paper,
+%bindingoffset=1cm,
+left=3.18cm,
+right=3.18cm,
+top=2.54cm,
+bottom=2.54cm,
+footskip=1.5cm,
+twoside,
+]{geometry}
+
+\usepackage{pdfpages}
+
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{
+    \fancyhf{} % clear all fields
+    \fancyhead[CE]{\title} 
+    \fancyhead[CO]{\leftmark} 
+    \fancyfoot[C]{\thepage}
+    
+    \renewcommand{\headrulewidth}{0.4pt} 
+    \renewcommand{\footrulewidth}{0pt}
+}
+\fancyhf{} % clear all fields
+\fancyhead[CE]{\title} 
+\fancyhead[CO]{\leftmark} 
+\fancyfoot[C]{\thepage}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0pt}
+
+\usepackage{tocloft}      %必须这么写，否则会报错
+
+\renewcommand\contentsname{目\quad 录}
+\renewcommand\cftbeforetoctitleskip{-7.5pt}
+\renewcommand\cftaftertoctitleskip{15pt}
+\renewcommand\cfttoctitlefont{\sffamily\xiaosan}
+\renewcommand\cftdot{…}
+\renewcommand{\cftdotsep}{0}
+
+\renewcommand{\cftchapleader}{\cftdotfill{-0.5}} %设置chapter条目的引导点间距
+\renewcommand{\cftsecleader}{\cftdotfill{-0.5}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{-0.5}}
+\renewcommand{\cftchapfont}{\sffamily\sihao}    %设置chapter条目的字体
+\renewcommand{\cftchappagefont}{\rmfamily\sihao}
+\renewcommand{\cftbeforechapskip}{7pt}   
+\renewcommand{\cftsecfont}{\sffamily\xiaosi}    %设置section条目的字体
+\renewcommand{\cftsecpagefont}{\rmfamily\xiaosi}
+\renewcommand{\cftbeforesecskip}{6pt}
+\renewcommand{\cftsubsecfont}{\rmfamily\xiaosi} %设置subsection条目的字体
+\renewcommand{\cftsubsecpagefont}{\rmfamily\xiaosi}
+\renewcommand{\cftbeforesubsecskip}{6pt}
+
+\DeclareCaptionLabelSeparator{fullcolon}{\quad}
+\captionsetup{labelsep=fullcolon,font={bf,small,singlespacing},format=hang}
+
+
+\usepackage{pifont}
+\renewcommand\thefootnote{\ding{\numexpr171+\value{footnote}}}
+
+\usepackage{xpatch}
+\usepackage{scrextend}
+\deffootnote[1.5em]{1.5em}{1em}{\thefootnotemark\space}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\renewcommand{\tabularxcolumn}[1]{>{\small}m{#1}}
+
+%\usepackage[super, square, comma, sort&compress]{natbib}
+\usepackage[sort]{gbt7714}
+\bibliographystyle{gbt7714-2005-numerical}
